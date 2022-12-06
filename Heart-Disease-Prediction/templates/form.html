@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/style_form.css')}}">
+        <title>Predict</title>
+    </head>
+    <body>
+        <!-- <div class="login"> -->
+        <h1>Predict Heart Disease</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <!-- <label for="first_name">First Name:</label> -->
+            <!-- <input name="first_name" id="first_name" type="text" autocomplete="off">
+            <br>
+            <label for="surname">Surname:</label>
+            <input name="surname" id="surname" type="text" autocomplete="off">
+            <br> -->
+            <label for="age">Age:</label>
+            <input name="age" id="age" type="number" autocomplete="off">
+            <br>
+            <label for="sex">Gender:</label>
+            <input name="sex" id="sex" type="number" autocomplete="off">
+            <br>
+            <label for="cp">Chest Pain Type:</label>
+            <input name="cp" id="cp" type="number" autocomplete="off">
+            <br>
+            <label for="trestbps">trestbps:</label>
+            <input name="trestbps" id="trestbps" type="number" autocomplete="off">
+            <br>
+            <label for="chol">Serum Cholestrol:</label>
+            <input name="chol" id="chol" type="number" autocomplete="off">
+            <br>
+            <label for="fbs">Fasting Blood Sugar:</label>
+            <input name="fbs" id="fbs" type="number" autocomplete="off">
+            <br>
+            <label for="restecg">Resting ECG:</label>
+            <input name="restecg" id="restecg" type="number" autocomplete="off">
+            <br>
+            <label for="thalach">Max heart rate:</label>
+            <input name="thalach" id="thalach" type="number" autocomplete="off">
+            <br>
+            <label for="exang">Exercise Induced Angina:</label>
+            <input name="exang" id="exang" type="number" autocomplete="off">
+            <br>
+            <label for="oldpeak">oldpeak:</label>
+            <input name="oldpeak" id="oldpeak" type="number" autocomplete="off">
+            <br>
+            <label for="slope">slope:</label>
+            <input name="slope" id="slope" type="number" autocomplete="off">
+            <br>
+            <label for="ca">No. of major vessels colord by flourosopy:</label>
+            <input name="ca" id="ca" type="number" autocomplete="off">
+            <br>
+            <label for="thal">thalassemia:</label>
+            <input name="thal" id="thal" type="number" autocomplete="off">
+            <br>
+            <input type="submit" value="submit">
+            <!-- <input type="text" name="target" placeholder="target" required="required" /> -->
+            <!-- <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> -->
+        </form>
+        <br />
+        <br />
+        <!-- </div> -->
+    </body>
+</html>

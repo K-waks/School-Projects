@@ -1,0 +1,97 @@
+html {
+  font-family: avenir;
+  font-size: 120%;
+}
+
+
+
+/* ******************************** HEADER ****************************** */
+
+header {
+  background: rgb(69, 110, 57);
+}
+
+.inline {
+  display: inline;
+}
+
+#hospital_name {
+  display: inline;
+  margin-left: 1em;
+}
+
+
+
+/* *************************** HORIZONTAL NAVIGATION BAR *************************** */
+
+.navbar1 {
+  border-bottom: 1px solid #bdb773;
+}
+
+.navbar1 li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.navbar1 a {
+  text-decoration: none;
+  color: black;
+  background: palegoldenrod;
+  padding: 0.1em 0.7em 0;
+  border-radius: 0.3em 0.3em 0 0;
+}
+
+.navbar1 a:hover {
+  background: darkslateblue;
+  color: white;
+}
+
+
+
+/*  ********************************* SIDE BAR ********************************* */
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* absolute sidebar (stay in place on scroll) */
+  left: 0;
+  background-color: rgb(69, 110, 57); /* Black */
+  overflow-x: hidden; /*Disable horizontal scroll*/
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ddd7d7;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #e5ff00;
+}
+
+
+
+/* ****************************** PAGE CONTENT ******************************/
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+
+
+/* ******************************** FOOTER ***************************** */
+
+footer {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/ 
+  height: 40px;
+  background: rgb(69, 110, 57);
+  text-align: center;
+}
