@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Cleveland Heart Clinic</title>{% endblock %}
+{% block index_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock index_css %}
+{% block content %}
+    <section>
+        <h1 class="text-light">Cleveland Heart Clinic</h1>
+        <small class="text-light">{{ today }}</small>
+        <br>
+        <br>
+        <h3 class="text-warning">COMMITTED TO KEEPING YOU HEART HEALTHY</h3>
+        <br>
+        <p class="text-light">
+            Cleveland Heart Care's mission is to provide compassionate, comprehensive, high- quality and technically advanced cardiovascular care as we focus on prevention, diagnosis and treatment of a wide range of cardiac and vascular conditions. Our physicians, providers and staff are dedicated to excellence by providing personalized care to our patients in a friendly, relaxed atmosphere. We take pride in treating our patients like family that result in high patient retention and satisfaction.
+        </p>
+        <br>
+    </p>
+    <p class="text-light">
+        At Cleveland Heart Care Clinic, we provide excellent treatment in cardiology, interventional cardiology and internal medicine. Our comprehensive and focused approach to our patients along with the state-of-the-art-facilities ensures that each of our patients gets the best possible outcome. To know about our services, click on the below tabs:
+    </p>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/style_form.css' %}" />
+{% endblock %}
+{% block title %}<title>confirm delete</title>{% endblock %}
+{% block content %}
+    <main>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <p>Are you sure you want to delete "{{ patient.first_name }} {{ patient.surname }}"?</p>
+                <p>This action can't be undone.</p>
+                <input class="btn btn-xs btn-danger" type="submit" value="Confirm">
+                <a class="btn btn-xs btn-secondary" href="{% url 'PatientListView' %}">Cancel</a>
+            </form>
+        </div>
+    </main>
+{% endblock %}

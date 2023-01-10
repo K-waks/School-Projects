@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Patient Detail</title>{% endblock %}
+{% block content %}
+    <table class="table table-sm table-secondary"
+           style="margin: 0 auto;
+                  width: 800px;
+                  text-align: left;">
+        <h2>{{ patient.first_name }} {{ patient.surname }}</h2>
+        Patient ID: {{ patient.id }}
+        <tbody>
+            <tr>
+                <td>Age: {{ patient.age }}</td>
+            </tr>
+            <tr>
+                {% if patient.sex  == 0 %}
+                    <td>Gender: Female</td>
+                {% elif patient.sex  == 1 %}
+                    <td>Gender: Male</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>Chest Pain Type: {{ patient.cp }}</td>
+            </tr>
+            <tr>
+                <td>trestbps: {{ patient.trestbps }}</td>
+            </tr>
+            <tr>
+                <td>Serum Cholestrol: {{ patient.chol }}</td>
+            </tr>
+            <tr>
+                <td>Fasting Blood Sugar: {{ patient.fbs }}</td>
+            </tr>
+            <tr>
+                <td>Resting ECG: {{ patient.restecg }}</td>
+            </tr>
+            <tr>
+                <td>Max heart rate: {{ patient.thalach }}</td>
+            </tr>
+            <tr>
+                <td>Exercise Induced Angina: {{ patient.exang }}</td>
+            </tr>
+            <tr>
+                <td>oldpeak : {{ patient.oldpeak }}</td>
+            </tr>
+            <tr>
+                <td>slope: {{ patient.slope }}</td>
+            </tr>
+            <tr>
+                <td>No. of major vessels colord by flourosopy: {{ patient.ca }}</td>
+            </tr>
+            <tr>
+                <td>Thalassemia: {{ patient.thal }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <hr>
+    <button class="btn btn-primary" onclick="myFunction()">Heart Disease Diagnosis Prediction</button>
+    <br>
+    <br>
+    <div id="myDIV"
+         class="bg-dark text-light p-2"
+         style="margin: 0 auto;
+                width: 800px;
+                text-align: centre;
+                display: none;">
+        {% if patient.target == "No Heart Disease" %}
+            <p>Based on these symptoms, system's prediction on heart disease diagnosis is:</p>
+            <span class="bg-success text-warning mt-1 p-2" style="font-weight:bold">{{ patient.target }}</span>
+        {% else %}
+            <p>Based on these symptoms, system's prediction on heart disease diagnosis is:</p>
+            <span class="bg-danger text-warning mt-1 p-2" style="font-weight:bold">{{ patient.target }}</span>
+        {% endif %}
+    </div>
+    <br>
+    <a class="btn btn-xs btn-secondary" href="{% url 'PatientListView' %}">Back</a>
+    <a class="btn btn-xs btn-success"
+       href="{% url 'PatientUpdateView' pk=patient.id %}">Update Record</a>
+    <a class="btn btn-xs btn-danger"
+       href="{% url 'PatientDeleteView' pk=patient.id %}">Delete</a>
+    <br>
+    <br>
+    
+{% endblock %}

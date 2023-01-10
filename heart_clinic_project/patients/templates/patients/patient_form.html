@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}
+    <title>Register Patient</title>
+{% endblock title %}
+{% block content %}
+    <div class="bg-success text-light">{{ note }}</div>
+    <br>
+    <form method="POST" style="margin: 0 auto; width: 800px; text-align: left;">
+        {% csrf_token %}
+        {% for field in patient_form %}
+            <div class="form-group row mb-2 ">
+                {{ field.label_tag }}
+                <div class="col-sm-10">{% render_field field class="form-control" %}</div>
+            </div>
+        {% endfor %}
+        <input class="btn btn-primary btn-block mb-4"
+               name="submit"
+               type="submit"
+               value="submit">
+        <a class="btn btn-secondary btn-block mb-4"
+           href="{% url 'PatientListView' %}">Back</a>
+    </form>
+{% endblock content %}

@@ -1,0 +1,8 @@
+html {
+    background-image: url('../images/homepage.jpg');
+    background-size: cover;
+}
+
+body {
+    background: rgba(43, 37, 37, 0.466);
+}

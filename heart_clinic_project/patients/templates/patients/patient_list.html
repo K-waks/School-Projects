@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Patients Records</title>
+{% endblock title %}
+{% block content %}
+    <table class="table table-sm table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+                <tr class="my-3">
+                    <td>{{ patient.id }}</td>
+                    <td>{{ patient.first_name }}</td>
+                    <td>{{ patient.surname }}</td>
+                    <td>
+                        <a class="btn btn-xs btn-outline-info "
+                           href="{% url 'PatientDetailView' pk=patient.id %}">see detailed info...</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a class="btn btn-success btn-block my-2"
+       href="{% url 'PatientCreateView' %}">Register New Patient</a>
+    <a class="btn btn-xs btn-secondary" href="{% url 'index' %}">Back</a>
+{% endblock content %}
