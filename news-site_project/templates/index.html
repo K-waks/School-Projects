@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}
+  <title>Mwananchi on the Lookout</title>
+{% endblock title %}
+{% block content %}
+  <h1>Welcome to Hey Mwananchi!</h1>
+  <p>Today is {{ today }}</p>
+  <a href="{% url 'Articles_ListView' %}" class="btn btn-primary">Check out these articles</a>
+{% endblock content %}

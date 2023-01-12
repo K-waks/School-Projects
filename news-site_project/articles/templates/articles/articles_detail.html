@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Article</title>
+{% endblock title %}
+{% block content %}
+    <article>
+        <h3>{{ article.category }}</h3>
+        <p>{{ article.content }}</p>
+        <p>By {{ article.reporter.username }}</p>
+        <p>Published {{ article.pub_date|date:"F j, Y" }}</p>
+    </article>
+    <a href="{% url 'Articles_ListView' %}" class="btn btn-primary">Back</a>
+    {% if user.is_authenticated and user.is_superuser %}
+        <a href="{% url 'delete_article' pk=article.id %}"
+           class="btn btn-danger">Delete</a>
+    {% endif %}
+{% endblock content %}

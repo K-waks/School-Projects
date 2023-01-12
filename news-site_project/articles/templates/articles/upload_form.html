@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}
+    <title>Upload article</title>
+{% endblock title %}
+{% block content %}
+    {{ note }}
+    <form action="{% url 'upload_article' %}"
+          method="post"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{{ form.file.label_tag }} {{ form.file.help_text }}</p>
+        {{ form.file }}
+        <br><br>
+        <input class="btn btn-success" type="submit" value="Upload" />
+    </form>
+    {% if note %}
+        <a href="{% url 'Articles_ListView' %}" class="m-4 btn btn-primary">View articles</a>
+    {% endif %}
+{% endblock content %}
